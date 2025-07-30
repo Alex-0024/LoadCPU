@@ -128,6 +128,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="resource.h" />
     <ClInclude Include="wndForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -136,6 +137,12 @@
     <EmbeddedResource Include="wndForm.resx">
       <DependentUpon>wndForm.h</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="LoadCPU.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resourses\icon_cpu.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

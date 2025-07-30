@@ -56,6 +56,7 @@ namespace LoadCPU {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(wndForm::typeid));
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->btnBegin = (gcnew System::Windows::Forms::Button());
 			this->btnEnd = (gcnew System::Windows::Forms::Button());
@@ -89,13 +90,14 @@ namespace LoadCPU {
 			// 
 			// btnEnd
 			// 
+			this->btnEnd->BackColor = System::Drawing::SystemColors::Control;
 			this->btnEnd->Enabled = false;
 			this->btnEnd->Location = System::Drawing::Point(292, 120);
 			this->btnEnd->Name = L"btnEnd";
 			this->btnEnd->Size = System::Drawing::Size(129, 111);
 			this->btnEnd->TabIndex = 2;
 			this->btnEnd->Text = L"END";
-			this->btnEnd->UseVisualStyleBackColor = true;
+			this->btnEnd->UseVisualStyleBackColor = false;
 			this->btnEnd->Click += gcnew System::EventHandler(this, &wndForm::btnEnd_Click);
 			// 
 			// label2
@@ -110,7 +112,7 @@ namespace LoadCPU {
 			// cntThreaders
 			// 
 			this->cntThreaders->Location = System::Drawing::Point(344, 288);
-			this->cntThreaders->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1024, 0, 0, 0 });
+			this->cntThreaders->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 256, 0, 0, 0 });
 			this->cntThreaders->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
 			this->cntThreaders->Name = L"cntThreaders";
 			this->cntThreaders->Size = System::Drawing::Size(105, 44);
@@ -132,7 +134,10 @@ namespace LoadCPU {
 			this->Controls->Add(this->label1);
 			this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 24, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Margin = System::Windows::Forms::Padding(10, 9, 10, 9);
+			this->MaximizeBox = false;
 			this->Name = L"wndForm";
 			this->Text = L"Load CPU";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->cntThreaders))->EndInit();
